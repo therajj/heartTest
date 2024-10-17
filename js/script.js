@@ -1,5 +1,6 @@
 function startQuiz() {
     console.log("立即檢測");
+    updateProgress();
     document.getElementById("mainPage").style.display = "none"; // 隱藏首頁
     document.getElementById("question1").style.display = "block"; // 顯示第一題
 }
@@ -20,6 +21,9 @@ function addScoreAndNext(currentQuestion, scoreObject) {
     scores.nature += scoreObject.nature;
     scores.nostalgia += scoreObject.nostalgia;
     scores.foodie += scoreObject.foodie;
+
+    // 更新進度
+    updateProgress();
 
     // 跳到下一題
     nextQuestion(currentQuestion);
@@ -47,7 +51,7 @@ function nextQuestion(currentQuestion) {
 
 
 // 總題目數
-const totalQuestions = 12;
+const totalQuestions = 11;
 // 當前題目編號
 let currentQuestion = 0;
 
@@ -57,11 +61,11 @@ function updateProgress() {
         currentQuestion++;
         const progressPercentage = (currentQuestion / totalQuestions) * 100;
 
-        // 更新進度條高度
-        document.getElementById('progress-bar').style.height = progressPercentage + '%';
+        // 獲取進度條目前的寬度
+        const progressElement = document.querySelector('.progress');
 
-        // 更新進度百分比文字
-        document.getElementById('progress-text').textContent = Math.round(progressPercentage) + '%';
+        // 更新進度條的寬度
+        progressElement.style.width = progressPercentage + '%';
     }
 }
 
