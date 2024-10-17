@@ -451,7 +451,72 @@ p {
     border-radius: 10px;
 }
 
+/* 最後結果的彈出框 */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
+/* 最後結果的文字內容 */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* 最後結果彈出框的確定按鈕 */
+.result-button {
+    background-color: #FFA07A; /* 淺橘色背景 */
+    color: white; /* 白色文字 */
+    border: none; /* 去掉邊框 */
+    padding: 10px 20px; /* 上下和左右的內邊距 */
+    text-align: center; /* 文字居中 */
+    text-decoration: none; /* 去掉下劃線 */
+    display: inline-block; /* 使按鈕在行內顯示 */
+    font-size: 16px; /* 字體大小 */
+    margin: 10px 2px; /* 外邊距 */
+    cursor: pointer; /* 游標變成手型 */
+    border-radius: 5px; /* 圓角邊框 */
+    transition: background-color 0.3s; /* 漸變效果 */
+}
+
+.result-button:hover {
+    background-color: #FF8C69; /* 鼠標懸停時的深橘色 */
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+/* 提示文字 */
+.hint {
+    cursor: pointer;
+}
+
+.hint-img {
+    width: 20%;
+    height: 50%;
+    cursor: pointer;
+    border-radius: 50%; /* 裁剪成圓形 */
+    object-fit: cover; /* 確保圖片適應圓形 */
+}
+
+/* 置中樣式 */
+.flex-block{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
 /* 手機和平板響應式設計 */
 @media screen and (max-width: 768px) {

@@ -1,16 +1,3 @@
-// 所有圖片的路徑
-const images = [
-    'images/topic1.png',
-    'images/topic2.png',
-    'images/topic3.png',
-    'images/topic4.png',
-    'images/topic5.png',
-    'images/topic6.png',  
-    'images/topic7.png',
-    'images/topic8.png',
-    'images/topic9.png',
-];
-
 function startQuiz() {
     console.log("立即檢測");
     updateProgress();
@@ -50,11 +37,11 @@ function nextQuestion(currentQuestion) {
         currentDiv.style.display = 'none';  // 隱藏當前題目
     }
 
-    // 如果是第九題，跳轉到 loading 畫面
+    // 如果是最後一題，跳轉到 loading 畫面
     if (currentQuestion === 9) {
-        setTimeout(function () {
+        setTimeout(() => {
             window.location.href = 'loading.html';  // 500毫秒後跳轉到 loading.html
-        }, 500);  // 設置0.5秒的延遲時間
+        }, 1000);
     } else if (nextDiv) {
         nextDiv.style.display = 'block';  // 顯示下一題
     } else {
@@ -87,8 +74,6 @@ function updateProgress() {
 
 // 顯示測驗結果
 function showResult() {
-    document.getElementById('resultPage').style.display = 'block';
-
     // 根據分數判斷最高的類別
     const maxCategory = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
 
@@ -109,4 +94,31 @@ function showResult() {
     }
 
     document.getElementById('resultText').innerText = resultText;
+    // 顯示結果彈出框
+    document.getElementById('resultModal').classList.remove('hidden'); 
+}
+
+function closeResultModal() {
+    // 隱藏模結果彈出框
+    document.getElementById('resultModal').classList.add('hidden'); 
+}
+
+function checkAnswer() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    
+    if (!selectedAnswer) {
+        alert('請選擇一個答案！');
+        return;
+    }
+
+    if (selectedAnswer.value === 'correct') {
+        // 顯示結果
+        showResult();
+    } else {
+        // 不顯示結果，並可以選擇顯示錯誤提示
+        alert('猜錯囉～～');
+        document.getElementById("hint-area").classList.remove("hidden");
+        // 這裡可以選擇不做任何事，或者清空選擇
+        document.getElementById('quiz-form').reset(); // 清空選擇
+    }
 }

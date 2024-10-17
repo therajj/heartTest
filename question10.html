@@ -46,7 +46,7 @@
                 <!-- 圖片展示區 -->
                 <div class="image-area">
                     <h3 id="teacher1">猜猜我在哪？</h3>
-                    <img src="C:\Users\User\Desktop\畢業專題\心理測驗程式碼\photos\嘉義美術館.JPG" alt="Location Image" class="location-img">
+                    <img src="photos/museum.jpg" alt="Location Image" class="location-img">
                 </div>
         
                 <!-- 互動區 -->
@@ -65,21 +65,25 @@
                         <label>
                             <input type="radio" name="answer" value="wrong"> 東門町派出所
                         </label><br>
-                        <button type="buttom" id="submit-btn">確認</button>
+                        <div class="flex-block">
+                            <!-- 提示區域 -->
+                            <div id="hint-area" class="hidden flex-block">
+                            <img src="images/hachi.png" alt="提示角色" class="hint-img">
+                            <p class="hint">是不是想不到呢？<br/>點我領取提示！</p>
+                            </div>
+                            <button type="button" id="submit-btn" onclick="checkAnswer()">確認</button>
+                        </div>
                     </form>
-        
-                    <!-- 提示區域 -->
-                    <div id="hint-area" class="hidden">
-                        <img src="images/hint.png" alt="提示角色" class="hint-img">
-                        <p>是不是想不到呢？點我領取提示！</p>
+                    <!-- 顯示結果的區域 -->
+                    <div id="resultModal" class="modal hidden">
+                        <div class="modal-content">
+                            <h2>測驗結果</h2>
+                            <p id="resultText"></p>
+                            <button class="result-button" onclick="closeResultModal()">確定</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        
-            <script src="js/script.js"></script>
-
-                
-        
     
         </div>
         <script src="js/script.js"></script>
