@@ -1,3 +1,16 @@
+// 所有圖片的路徑
+const images = [
+    'images/topic1.png',
+    'images/topic2.png',
+    'images/topic3.png',
+    'images/topic4.png',
+    'images/topic5.png',
+    'images/topic6.png',  
+    'images/topic7.png',
+    'images/topic8.png',
+    'images/topic9.png',
+];
+
 function startQuiz() {
     console.log("立即檢測");
     updateProgress();

@@ -389,15 +389,20 @@ label input[type="radio"] {
     opacity: 0; /* 隱藏單選框，並保留其功能 */
 }
 
+.content{
+    position: relative;
+    z-index: 1;
+}
+
 .illustration{
-    position: absolute;
-    top: 50%; /* 垂直居中 */
-    left: 50%; /* 水平居中 */
-    transform: translate(-50%, -50%); /* 將圖片向左上移以精確居中 */
-    z-index: -1; /* 確保圖片位於選項下面 */
-    width: 80%; /* 可根據需要調整寬度 */
+    transform: translate(-23%, -50%); /* 將圖片向左上移以精確居中 */
+    width: max-content; /* 可根據需要調整寬度 */
     height: auto; /* 確保圖片比例不變 */
-    background-size: cover;
+    img {
+        object-fit: cover;
+        width: 70%;
+        height: 100%;
+    }
 }
 
 
@@ -446,6 +451,7 @@ p {
     border-radius: 10px;
     margin-bottom: 20px;
     position: relative;
+    z-index: 1;
 }
 
 
