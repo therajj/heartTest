@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/loading.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>article</title>
+        <style>
+            .question {
+                display: none; /* 初始隱藏所有問題 */
+            }
+            .active {
+                display: block; /* 只顯示當前問題 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="menu">
+                    
+                <h1>
+                    <a href="home.html"></a>
+                </h1>  
+                        
+                    
+                <ul>
+                    <li><a href="#">讀嘉診療所</a></li>
+                    <li><a href="vlog.html">嘉一點vlog</a></li>
+                    
+                    <li><a href="article.html">讀嘉記義</a></li>
+                    <li><a href="about.html">1+1=4</a></li>
+                    
+                </ul> 
+                <!-- 漢堡按鈕 -->
+                <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+                    
+            </nav>
+
+            <!-- 心理測驗首頁 -->
+            <div class="main-page"  id="loadingPage" style ="text-align:center">
+            
+
+                    <div style="color: #64d6e2" class="loading la-square-jelly-box la-3x">
+
+                            <h4 class="loadingText">
+                                你的專屬結果圖製作超過一半囉 ! 
+                                <br>就剩最後幾步了，跟著我繼續往前進吧～
+                            </h4>
+                    </div>
+            </div>
+                    </div>
+            </div>
+
+            <form id="quizForm">
+
+                 <!-- 進度條容器 -->
+                <div class="progress-bar">
+                <div class="progress"></div>
+                </div> 
+
+                
+        
+    
+        </div>
+        <script src="js/script.js"></script>
+        <script src="js/nav.js"></script>
+
+        <body>
+    
+
+            <script>
+                
+                // 設定跳轉時間，例如2秒後跳轉到結果頁或下一頁
+                setTimeout(function() {
+                    window.location.href = 'question10.html';  // 這裡可以改成結果頁或下一步的網頁
+                }, 2000);  // 2000 毫秒 = 2 秒
+            </script>
+        
+        
+        </body>
+</body>
+
+</html>
+
+
+
+
+
+               

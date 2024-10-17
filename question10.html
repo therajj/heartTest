@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/question10.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>article</title>
+        <style>
+            .question {
+                display: none; /* 初始隱藏所有問題 */
+            }
+            .active {
+                display: block; /* 只顯示當前問題 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="menu">
+                    
+                <h1>
+                    <a href="home.html"></a>
+                </h1>  
+                        
+                    
+                <ul>
+                    <li><a href="#">讀嘉診療所</a></li>
+                    <li><a href="vlog.html">嘉一點vlog</a></li>
+                    
+                    <li><a href="article.html">讀嘉記義</a></li>
+                    <li><a href="about.html">1+1=4</a></li>
+                    
+                </ul> 
+                <!-- 漢堡按鈕 -->
+                <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+                    
+            </nav>
+            <!-- 進度條 -->
+            <div class="progress-bar">
+                <div class="fish-icon"></div>
+            </div>
+
+            <div class="container2">
+                
+                <!-- 圖片展示區 -->
+                <div class="image-area">
+                    <h3 id="teacher1">猜猜我在哪？</h3>
+                    <img src="C:\Users\User\Desktop\畢業專題\心理測驗程式碼\photos\嘉義美術館.JPG" alt="Location Image" class="location-img">
+                </div>
+        
+                <!-- 互動區 -->
+                <div class="right-area">
+                    <h3 id="teacher2">你的答案是：</h3>
+                    <form id="quiz-form">
+                        <label>
+                            <input type="radio" name="answer" value="wrong"> 嘉義舊監獄
+                        </label><br>
+                        <label>
+                            <input type="radio" name="answer" value="correct"> 嘉義美術館
+                        </label><br>
+                        <label>
+                            <input type="radio" name="answer" value="wrong"> 嘉義製材所
+                        </label><br>
+                        <label>
+                            <input type="radio" name="answer" value="wrong"> 東門町派出所
+                        </label><br>
+                        <button type="buttom" id="submit-btn">確認</button>
+                    </form>
+        
+                    <!-- 提示區域 -->
+                    <div id="hint-area" class="hidden">
+                        <img src="images/hint.png" alt="提示角色" class="hint-img">
+                        <p>是不是想不到呢？點我領取提示！</p>
+                    </div>
+                </div>
+            </div>
+        
+            <script src="js/script.js"></script>
+
+                
+        
+    
+        </div>
+        <script src="js/script.js"></script>
+        <script src="js/nav.js"></script>
+</body>
+
+</html>

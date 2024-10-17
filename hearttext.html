@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>article</title>
+        <style>
+            .question {
+                display: none; /* 初始隱藏所有問題 */
+            }
+            .active {
+                display: block; /* 只顯示當前問題 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="menu">
+                    
+                <h1>
+                    <a href="home.html"></a>
+                </h1>  
+                        
+                    
+                <ul>
+                    <li><a href="#">讀嘉診療所</a></li>
+                    <li><a href="vlog.html">嘉一點vlog</a></li>
+                    
+                    <li><a href="article.html">讀嘉記義</a></li>
+                    <li><a href="about.html">1+1=4</a></li>
+                    
+                </ul> 
+                <!-- 漢堡按鈕 -->
+                <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+                    
+            </nav>
+
+            <!-- 心理測驗首頁 -->
+            <div class="main-page"  id="mainPage" style ="text-align:center">
+            
+                <h1 class="frontPage"><b>讀嘉診療所</b></h1>
+                <h4 class="frontPageWord">
+                    <br>總是被繁雜的課業壓到喘不過氣的你，給自己一個機會：去放空吧
+                    <br>有些答案在書本找不到，就去經歷那些不同的人間煙火
+                    <br>把那些沒走過的路，都去走一遍！
+                    <br>治療一直困在匆忙生活的你，是時候來一場漫遊之旅了......
+                </h4>
+                <button  class="start-button"  onclick="startQuiz()">立即檢測</button>
+            </div>
+
+            <form id="quizForm">
+
+                 <!-- 進度條容器 -->
+                <div class="progress-bar">
+                <div class="progress"></div>
+                </div> 
+             
+               
+                <!-- 問題 1 -->
+                <div class="question" id="question1" style="text-align:center">
+                    <p>
+                        <br>清晨六點半，叮咚，訊息聲響起。
+                        <br>突如其來的鈴聲驚醒在睡夢中的你，
+                        <br>雙擊手機螢幕，睡眼惺忪的查看訊息：
+                        <br>「今天學校跳電，停課一天。」
+                        <br>此時你會……？
+                    </p>
+                    
+                    <label>
+                        <input type="radio" name="q1" onchange="addScoreAndNext(1,{influencer: 2, nature: 1, nostalgia: 2, foodie: 1})">
+                        A.心想難得放假，立馬躺回去繼續睡，睡到自然醒
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q1" onchange="addScoreAndNext(1,{influencer:1 , nature: 2, nostalgia: 1, foodie: 1})">
+                        B.內心掙扎了一下決定設個九點的鬧鐘再起來吃早餐
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q1" onchange="addScoreAndNext(1,{influencer: 1, nature: 1, nostalgia: 1, foodie: 2})">
+                        C.都起床了，盥洗完去吃個早餐吧
+                    </label><br>
+
+                     <!-- 圖像插圖 -->
+                   <div class="illustration">
+                    <img src="images/topic1.png" alt="Character Illustration">
+                    </div>
+
+                </div>
+         
+               
+                <!-- 問題 2 -->
+                <div class="question" id="question2" style="display:none;text-align:center">
+                    <p>
+                        <br>用餐完畢去櫃檯結帳的時候，老闆拿出四張優惠券，
+                        <br>並說道：「同學，老闆這裡有四張不同的優惠卷，挑一張吧！」
+                        <br>你驚喜若狂的向老闆道謝後，你會挑選……？
+                        
+                    </p>
+                    
+                    <label>
+                        <input type="radio" name="q2" onchange="addScoreAndNext(2,{foodie: 2})">
+                        A.四人同行一人免費的餐廳優惠卷
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q2" onchange="addScoreAndNext(2,{influencer: 2})">
+                        B.四人同行的299元遊樂園學生票
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q2" onchange="addScoreAndNext(2,{nostalgia: 2})">
+                        C.單人DIY手作陶藝體驗課程
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q2" onchange="addScoreAndNext(2,{nature:2})">
+                        D.歷史文化展覽入園卷
+                    </label><br>
+                    <!-- 圖像插圖 -->
+                   <div class="illustration">
+                    <img src="images/topic2.png" alt="Character Illustration">
+                    </div>
+                
+                </div>
+        
+                <!-- 問題 3 -->
+                <div class="question" id="question3" style="display:none;text-align:center">
+                    <p>
+                        <br>你開心的走在街上，揮舞著手上的優惠卷，心想真是美好的一天。
+                        <br>突然，一陣大風刮來，手中的優惠卷隨風飄去，你下意識地追向飄走的
+                        <br>優惠卷，回過神來，眼前出現了一道料想不到的景象，此時你看到的是......？
+                        
+                    </p>
+                    
+                    <label>
+                        <input type="radio" name="q3" onchange="addScoreAndNext(3,{ nature: 1, nostalgia: 2})">
+                        A.充滿歷史痕跡的眷村
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q3" onchange="addScoreAndNext(3,{ nature: 2, nostalgia: 1})">
+                        B.導遊正在進行外國觀光客的導覽
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q3" onchange="addScoreAndNext(3,{ influencer: 2})">
+                        C.燦爛耀眼的花海
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q3" onchange="addScoreAndNext(3,{foodie:2})">
+                        D.人聲鼎沸的各國特色美食市集
+                    </label><br>
+                    <!-- 圖像插圖 -->
+                   <div class="illustration">
+                    <img src="images/topic3.png" alt="Character Illustration">
+                    </div>
+                </div>
+
+                <!-- 問題 4 -->
+                <div class="question" id="question4" style="display:none;text-align:center">
+                    <p>
+                        <br>看到這個景象，你會......？
+                    </p>
+                    
+                    <label>
+                        <input type="radio" name="q4" onchange="addScoreAndNext(4,{ influencer:2})">
+                        A.與景象合照
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q4" onchange="addScoreAndNext(4,{ nature: 2})">
+                        B.靜靜的待在一旁觀察
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q4" onchange="addScoreAndNext(4,{ foodie: 2})">
+                        C.馬上找當地人詢問情況
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q4" onchange="addScoreAndNext(4,{nostalgia:2})">
+                        D.單純拍下眼前景象
+                    </label><br>
+                    <!-- 圖像插圖 -->
+                   <div class="illustration">
+                    <img src="images/topic4.png" alt="Character Illustration">
+                    </div>
+                </div>
+
+                <!-- 問題 5  -->
+                <div class="question" id="question5" style="display:none;text-align:center">
+                    <p>
+                        <br>這時，遠方有一個人朝你走來，你覺得他是為了......？
+                    </p>
+                    
+                    <label>
+                        <input type="radio" name="q5" onchange="addScoreAndNext(5,{ foodie:2})">
+                        A.找尋美食的同路人
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q5" onchange="addScoreAndNext(5,{ influence:2})">
+                        B.請我幫他拍照
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q5" onchange="addScoreAndNext(5,{ natural: 2})">
+                        C.跟我介紹當地的風俗民情
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q5" onchange="addScoreAndNext(5,{nostalgia:2})">
+                        D.邀請我參加當地舉辦的祭典
+                    </label><br>
+                    <!-- 圖像插圖 -->
+                   <div class="illustration">
+                    <img src="images/topic5.png" alt="Character Illustration">
+                    </div>
+                </div>
+
+                 <!-- 問題 6  -->
+                 <div class="question" id="question6" style="display:none;text-align:center">
+                    <p>
+                        <br>與他熱情交流後，他拿出一樣物品送你做紀念，
+                        <br>你認為這樣物品會是......？
+                    </p>
+                    
+                    <label>
+                        <input type="radio" name="q6" onchange="addScoreAndNext(6,{ influence:2})">
+                        A.精緻的吊飾
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q6" onchange="addScoreAndNext(6,{ nostalgia:2})">
+                        B.黑膠唱片樂高
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q6" onchange="addScoreAndNext(6,{ natural: 2})">
+                        C.具有當地特色的服飾
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q6" onchange="addScoreAndNext(6,{foodie:2})">
+                        D.祖傳秘製的地方滷味
+                    </label><br>
+                    <!-- 圖像插圖 -->
+                   <div class="illustration">
+                    <img src="images/topic6.png" alt="Character Illustration">
+                    </div>
+                </div>
+
+                <!-- 問題 7  -->
+                <div class="question" id="question7" style="display:none;text-align:center">
+                    <p>
+                        <br>你認真的端詳手中的禮物，幾秒後抬頭準備向他致謝，
+                        <br>卻發現他已不見人影，此時你內心會想......？
+                    </p>
+                    
+                    <label>
+                        <input type="radio" name="q7" onchange="addScoreAndNext(7,{ influence:1,natural:1,nostalgia:1,foodie:2})">
+                        A.沒有多想，可能是有事先離開了
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q7" onchange="addScoreAndNext(7,{ influence:1,natural:2,nostalgia:1,foodie:1})">
+                        B.好可惜，我還沒聊夠耶！
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q7" onchange="addScoreAndNext(7,{ influence:1,natural:1,nostalgia:2,foodie:1})">
+                        C.我還沒道謝呢，怎麼就走了
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q7" onchange="addScoreAndNext(7,{influence:2,natural:1,nostalgia:1,foodie:1})">
+                        D.啊～忘記跟他要聯絡方式了
+                    </label><br>
+                    <!-- 圖像插圖 -->
+                   <div class="illustration">
+                    <img src="images/topic7.png" alt="Character Illustration">
+                    </div>
+                </div>
+
+                 <!-- 問題 8  -->
+                 <div class="question" id="question8" style="display:none;text-align:center">
+                    <p>
+                        <br>天色漸暗，你準備踏上返回的路途，此時的你會選擇......?
+                    </p>
+                    
+                    <label>
+                        <input type="radio" name="q8" onchange="addScoreAndNext(8,{natural:2})">
+                        A.回味一天的旅程，慢慢步行回去
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q8" onchange="addScoreAndNext(8,{ influence:2,foodie:2})">
+                        B.攔下路邊經過的計程車，早點回去
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q8" onchange="addScoreAndNext(8,{nostalgia:2})">
+                        C.搭乘接駁車，欣賞沿途風景
+                    </label><br>
+                    
+                </div>
+
+                <!-- 問題 9  -->
+                <div class="question" id="question9" style="display:none;text-align:center">
+                    <p>
+                        <br>回到家中，你決定將此次奇妙的旅程？
+                    </p>
+                    
+                    <label>
+                        <input type="radio" name="q9" onchange="addScoreAndNext(9,{influence:2,natural:1,nostalgia:1,foodie:1})">
+                        A.抓緊時間，立即發文
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q9" onchange="addScoreAndNext(9,{natural:2,nostalgia:1,foodie:1})">
+                        B.只與親近的親朋好友分享
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q9" onchange="addScoreAndNext(9,{natural:1,nostalgia:2,foodie:1})">
+                        C.獨自將一天所遇之事記錄下來
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q9" onchange="addScoreAndNext(9,{natural:1,nostalgia:1,foodie:2})">
+                        D.不做任何動作，將回憶單純記在腦中
+                    </label><br>
+                    
+                </div>
+
+                
+        
+    
+        </div>
+        <script src="js/script.js"></script>
+        <script src="js/nav.js"></script>
+</body>
+
+</html>
