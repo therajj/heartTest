@@ -513,7 +513,6 @@ padding:20px 5% 0 40%;
 
 
 .loading {
-  position: absolute;
   width: 500px;
   height: 80px;
   top: 50%;
@@ -521,6 +520,14 @@ padding:20px 5% 0 40%;
   margin-top: -15px;
   margin-left: -15px;
   z-index: 9999;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(5px); }
+  50% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
 }
 
 .loadingText{
@@ -540,6 +547,12 @@ padding:20px 5% 0 40%;
   left:0;
   right:0;
   margin: 0 auto;
+  animation: shake 1s ease-in-out 3; 
+}
+
+.layout {
+  display: flex;
+  align-items: center;
 }
 
 #loadingPage{
@@ -554,6 +567,12 @@ padding:20px 5% 0 40%;
   height: 50px; /* 高度 */
   animation: spin 1s linear infinite; /* 動畫效果 */
   margin: 20px auto; /* 自動左右邊距，居中 */
+}
+
+.spinner-container {
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 200px;
 }
 
 @keyframes spin {
