@@ -351,10 +351,6 @@ header {
     color:white;
 }
 
-
-.question {
-    display: none; /* 初始隱藏所有問題 */
-}
 .active {
     display: block; /* 只顯示當前問題 */
 }
@@ -370,18 +366,11 @@ header {
     font-weight: 600;
     line-height: normal;
     letter-spacing: 3px;
-}
-
-
-
-.question{
-    display:flex;
+    margin:auto;
     width:1000px;
     height:600px;
-}
-
-.question{
-    margin:auto;
+    flex-direction: column;
+    align-items: center;
 }
 
 label input[type="radio"] {
@@ -389,19 +378,13 @@ label input[type="radio"] {
     opacity: 0; /* 隱藏單選框，並保留其功能 */
 }
 
-.content{
-    position: relative;
-    z-index: 1;
-}
-
 .illustration{
-    transform: translate(-23%, -50%); /* 將圖片向左上移以精確居中 */
-    width: max-content; /* 可根據需要調整寬度 */
-    height: auto; /* 確保圖片比例不變 */
+    width: 100%; /* 可根據需要調整寬度 */
+    height: 40%; /* 確保圖片比例不變 */
     img {
         object-fit: cover;
-        width: 70%;
-        height: 100%;
+        width: 50%;
+        height: 90%;
     }
 }
 
@@ -418,7 +401,7 @@ label {
     margin-top: 10px;  /* 上邊距 */
     cursor: pointer;  /* 滑鼠移上去時變成手型 */
     font-size: 16px;  /* 字體大小 */
-    margin : 0 auto;
+    margin-bottom: 20px;
     z-index: 10;
 }
 
@@ -442,28 +425,42 @@ p {
 
 
 
-/* 進度條的容器 */
 .progress-bar {
-    display:block;
-    height: 20px;
-    width: 100%;
+    position: absolute; /* 設置為絕對定位 */
+    left: 20px; /* 左邊距 */
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-40%); /* 垂直居中 */
+    height: 500px; /* 設定高度 */
+    width: 20px; /* 設定寬度 */
     background-color: #ddd;
     border-radius: 10px;
     margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
+    z-index: 1; /* 確保在其他元素之上 */
 }
 
-
-/* 進度條的填充部分 */
 .progress {
-    height: 100%;
-    width: 0; /* 控制進度條的寬度百分比，依情況調整，初始值0% */
+    height: 0; /* 初始高度 */
+    width: 100%; /* 寬度為100% */
     background-color: #FFD700;
     border-radius: 10px;
-    transition: width 0.5s ease; /* 添加過渡效果 */
+    transition: height 0.5s ease; /* 添加過渡效果 */
 }
 
+.fish-icon {
+    position: absolute; /* 絕對定位 */
+    left: 50%; /* 置中 */
+    transform: translateX(-50%); /* 水平居中 */
+    height: 40px; /* 魚的高度 */
+    width: 40px; /* 魚的寬度 */
+    background-size: cover; /* 確保圖片填滿 */
+    transition: bottom 0.5s ease; /* 平滑過渡 */
+    bottom: calc(100% - 20px); /* 初始位置在進度條頂部 */
+}
+
+.fish-icon img {
+    width: 40px; /* 設定寬度以保證正確顯示 */
+    height: auto; /* 保持圖片的縱橫比 */
+}
 
 
 /* 手機和平板響應式設計 */

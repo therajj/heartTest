@@ -2,7 +2,7 @@ function startQuiz() {
     console.log("立即檢測");
     updateProgress();
     document.getElementById("mainPage").style.display = "none"; // 隱藏首頁
-    document.getElementById("question1").style.display = "block"; // 顯示第一題
+    document.getElementById("question1").style.display = "flex"; // 顯示第一題
 }
 
 
@@ -43,7 +43,7 @@ function nextQuestion(currentQuestion) {
             window.location.href = 'loading.html';  // 500毫秒後跳轉到 loading.html
         }, 1000);
     } else if (nextDiv) {
-        nextDiv.style.display = 'block';  // 顯示下一題
+        nextDiv.style.display = 'flex';  // 顯示下一題
     } else {
         showResult();  // 如果已經是最後一題，顯示結果
     }
@@ -64,13 +64,18 @@ function updateProgress() {
         // 獲取進度條目前的寬度
         const progressElement = document.querySelector('.progress');
 
-        // 更新進度條的寬度
-        progressElement.style.width = progressPercentage + '%';
+        // 更新進度條的高度
+        progressElement.style.height = progressPercentage + '%';
+
+        // 獲取魚的圖標元素
+        const fishIcon = document.querySelector('.fish-icon');
+
+        // 計算進度條的實際高度
+        const progressHeight = (progressPercentage / 100) * 500; // 假設進度條高度是500px
+        console.log({progressHeight})
+        fishIcon.style.bottom = `calc(100% - ${progressHeight+5}px)`;  // 直接設置為進度條的高度
     }
 }
-
-
-
 
 // 顯示測驗結果
 function showResult() {

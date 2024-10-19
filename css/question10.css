@@ -24,7 +24,7 @@ body{
  
 }
 article{
-  flex-grow: 1;  /* 讓 article 填充剩餘的空間 */
+    flex-grow: 1;  /* 讓 article 填充剩餘的空間 */
     padding-bottom: 30px;  /* 給 footer 一點空間 */
 }
 
