@@ -243,3 +243,15 @@ header {
 .hidden {
   display: none;
 }
+
+.resultButton {
+  width: 400px;
+  height: 50px;
+  border-radius: 10px;
+  border-color: transparent;
+  background: white;
+  font-size: large;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 30px;
+}

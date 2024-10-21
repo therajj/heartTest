@@ -7,11 +7,6 @@ window.onload = function () {
   console.log("reload gift", scores)
 };
 
-function closeResultModal() {
-  // 隱藏結果彈出框
-  document.getElementById('resultModal').classList.add('hidden');
-}
-
 // 增加分數並跳轉下一題
 function addScoreAndNext(currentQuestion, scoreObject) {
   console.log({ scoreObject })
@@ -34,11 +29,15 @@ function addScoreAndNext(currentQuestion, scoreObject) {
   scores.nostalgia = scores.nostalgia + scoreObject.nostalgia;
   scores.foodie = scores.foodie + scoreObject.foodie;
 
-  showResult();
+  localStorage.setItem('scores', JSON.stringify(scores));
+
+  // 跳到儲存圖片頁面
+  window.location.href = 'result.html';
 }
 
 // 顯示測驗結果
 function showResult() {
+  console.log('##in')
   // 根據分數判斷最高的類別
   const maxCategory = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
 
@@ -58,12 +57,8 @@ function showResult() {
       break;
   }
 
-  document.getElementById('resultText').innerText = resultText;
-  // 顯示結果彈出框
-  document.getElementById('resultModal').classList.remove('hidden');
-
-  // 隱藏進度條
-  document.getElementById('progressBar').classList.add('hidden');
+  const resultDiv = document.getElementById('result');
+  resultDiv.innerText = resultText; // 更新結果文本
 
   // 清除 currentQuestion
   localStorage.removeItem('currentQuestion');

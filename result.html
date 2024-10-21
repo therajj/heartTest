@@ -26,52 +26,17 @@
     <form id="quizForm">
       <!-- 心理測驗首頁 -->
       <div class="main-page" id="loadingPage" style="text-align:center">
-        <!-- 進度條容器 -->
-        <div id="progressBar" class="progress-bar">
-          <div class="progress"></div>
-          <div class="fish-icon">
-            <img src="images/fish.png" alt="Fish">
-          </div>
-        </div>
 
-        <h1>選出你心中的最嘉禮物！</h1>
         <p>
-          終於來到了旅程的最後一站！<br />
-          為了讚賞你的堅持，我們想送你一份禮物，<br />
-          選出一個你喜歡的吧！
+          你太幸運了！！恭喜獲得...
         </p>
+        <div id="result" style="margin-top: 20px; font-size: 20px; color: #333;display: block;"></div>
 
-        <!-- 禮物圖片區 -->
-        <div style="display: flex;">
-          <div id="influencer"
-            onclick="addScoreAndNext('currentQuestion', { influencer: 1, nature: 0, nostalgia: 0, foodie: 0 })">
-            <img src="images/pink-gift.png" alt="Influencer Gift" style="width:10%;height:auto;">
-            <p class="gift-text">金色絲帶的粉色禮物盒<br />盒身以時下流行的元素做裝飾</p>
-          </div>
-          <div id="nature"
-            onclick="addScoreAndNext('currentQuestion', { influencer: 0, nature: 1, nostalgia: 0, foodie: 0 })">
-            <img src="images/green-gift.png" alt="Nature Gift" style="width:10%;height:auto;">
-            <p class="gift-text">米色麻繩的綠色禮物盒<br />整體裝飾看起來自然清新</p>
-          </div>
-          <div id="nostalgia"
-            onclick="addScoreAndNext('currentQuestion', { influencer: 0, nature: 0, nostalgia: 1, foodie: 0 })">
-            <img src="images/blue-gift.png" alt="Nostalgia Gift" style="width:10%;height:auto;">
-            <p class="gift-text">銀色絲帶的深紅色禮物盒<br />使用印有復古圖案的包裝紙</p>
-          </div>
-          <div id="foodie"
-            onclick="addScoreAndNext('currentQuestion', { influencer: 0, nature: 0, nostalgia: 0, foodie: 1 })">
-            <img src="images/yellow-gift.png" alt="Foodie Gift" style="width:10%;height:auto;">
-            <p class="gift-text">棕色絲帶的橙色禮物盒<br />盒子上印有特色美食手繪插圖</p>
-          </div>
-        </div>
-
-        <!-- 顯示結果的區域 -->
-        <div id="resultModal" class="modal hidden">
-          <div class="modal-content">
-            <h2>測驗結果</h2>
-            <p id="resultText"></p>
-            <button class="result-button" onclick="closeResultModal()">確定</button>
-          </div>
+        <!-- 儲存圖片區 -->
+        <div style="display: flex;justify-content: center;align-items: center;flex-direction: column">
+          <!-- 暫時的結果顯示區 -->
+          <div style="background: cornsilk;width: 400px; height:400px; margin-bottom:20px;"></div>
+          <button type="button" class="resultButton" onclick="showResult()">儲存 並 領取你的專屬結果圖</button>
         </div>
 
       </div>
