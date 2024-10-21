@@ -1,12 +1,12 @@
 @charset "utf-8";
 
-*{
+* {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 24px;
     font-family: oswald;
 
@@ -16,16 +16,19 @@ html{
 }
 
 
-body{
+body {
 
     margin: 0;
     padding: 0;
     max-height: 100%;
 
 }
-article{
-    flex-grow: 1;  /* 讓 article 填充剩餘的空間 */
-    padding-bottom: 30px;  /* 給 footer 一點空間 */
+
+article {
+    flex-grow: 1;
+    /* 讓 article 填充剩餘的空間 */
+    padding-bottom: 30px;
+    /* 給 footer 一點空間 */
 }
 
 .container {
@@ -35,53 +38,60 @@ article{
     background: linear-gradient(180deg, #FDFCFB 0%, #E2D1C3 100%);
     overflow-x: hidden;
 
-    bottom: 0px; /* 尝试移除这个bottom属性 */
+    bottom: 0px;
+    /* 尝试移除这个bottom属性 */
     min-height: 100vh;
     padding-top: 88px;
 }
 
+.container-background {
+    background-image: url(../images/cover.png);
+    background-size: 90%;
+    background-position-x: center;
+    background-position-y: -100px;
+}
+
 header {
 
-    height:700px;
-    width:100%;
+    height: 700px;
+    width: 100%;
 
 
 }
 
-.menu{
-    background-color:#FE9858;
-    padding:0px 5px 0px 16px;
-    height:88px;
+.menu {
+    background-color: #FE9858;
+    padding: 0px 5px 0px 16px;
+    height: 88px;
     width: 100%;
-    position :fixed;
-    top:0px;
-    z-index:20;
-
-
-
+    position: fixed;
+    top: 0px;
+    z-index: 20;
 }
 
 .menu.scrolled {
-    background-color: rgba(254, 152, 88, 0.8); /* 变成更透明 */
-    backdrop-filter: blur(10px); /* 添加模糊效果 */
+    background-color: rgba(254, 152, 88, 0.8);
+    /* 变成更透明 */
+    backdrop-filter: blur(10px);
+    /* 添加模糊效果 */
 }
 
 
 
-.menu h1{
-    float:left;
+.menu h1 {
+    float: left;
 }
 
-.menu h1 a{
-    display:block;
-    background-image:url(https://images2.imgbox.com/96/0c/G1gO1j7e_o.png);
-    width:229px;
-    height:88px;
-    background-position:center center;
-    background-repeat:no-repeat;
-    text-indent:101%;
-    white-space:nowrap;
-    overflow:hidden;
+.menu h1 a {
+    display: block;
+    background-image: url(https://images2.imgbox.com/96/0c/G1gO1j7e_o.png);
+    width: 229px;
+    height: 88px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .menu ul li {
@@ -105,9 +115,12 @@ header {
     text-decoration: none;
     text-align: center;
 
-    border: 5px solid transparent; /* 初始狀態下邊框透明 */
-    transition: border 0.3s ease; /* 增加邊框過渡效果 */
+    border: 5px solid transparent;
+    /* 初始狀態下邊框透明 */
+    transition: border 0.3s ease;
+    /* 增加邊框過渡效果 */
 }
+
 .menu ul {
     display: flex;
     justify-content: flex-end;
@@ -115,13 +128,16 @@ header {
     margin: 0;
     padding: 0;
 }
+
 .menu ul li a:hover {
-    border: 5px solid #7B5F49; /* 設置咖啡色邊框 */
+    border: 5px solid #7B5F49;
+    /* 設置咖啡色邊框 */
 
 }
+
 .icon {
     display: none;
-    padding:20px 5% 0 40%;
+    padding: 20px 5% 0 40%;
 
     font-size: 24px;
     color: #fff;
@@ -129,27 +145,30 @@ header {
 }
 
 .menu.scrolled {
-    background-color: rgba(254, 152, 88, 0.8); /* 变成更透明 */
-    backdrop-filter: blur(10px); /* 添加模糊效果 */
+    background-color: rgba(254, 152, 88, 0.8);
+    /* 变成更透明 */
+    backdrop-filter: blur(10px);
+    /* 添加模糊效果 */
 }
 
 
 
-.menu h1{
-    float:left;
+.menu h1 {
+    float: left;
 }
 
-.menu h1 a{
-    display:block;
-    background-image:url(https://images2.imgbox.com/96/0c/G1gO1j7e_o.png);
-    width:229px;
-    height:88px;
-    background-position:center center;
-    background-repeat:no-repeat;
-    text-indent:101%;
-    white-space:nowrap;
-    overflow:hidden;
+.menu h1 a {
+    display: block;
+    background-image: url(https://images2.imgbox.com/96/0c/G1gO1j7e_o.png);
+    width: 229px;
+    height: 88px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
 }
+
 /*
 .menu ul li {
     float: right;
@@ -172,9 +191,12 @@ header {
     text-decoration: none;
     text-align: center;
 
-    border: 5px solid transparent; /* 初始狀態下邊框透明 */
-    transition: border 0.3s ease; /* 增加邊框過渡效果 */
+    border: 5px solid transparent;
+    /* 初始狀態下邊框透明 */
+    transition: border 0.3s ease;
+    /* 增加邊框過渡效果 */
 }
+
 /*
 .menu ul {
     display: flex;
@@ -185,9 +207,11 @@ header {
 }
 */
 .menu ul li a:hover {
-    border: 5px solid #7B5F49; /* 設置咖啡色邊框 */
+    border: 5px solid #7B5F49;
+    /* 設置咖啡色邊框 */
 
 }
+
 .menu {
     background-color: #FE9858;
     padding: 0px 5px 0px 16px;
@@ -234,14 +258,17 @@ header {
         height:100vh;
         */
         width: 200px;
-        height: calc(100vh - 88px); /* 使菜单栏占据导航栏下方的整个网页高度 */
+        height: calc(100vh - 88px);
+        /* 使菜单栏占据导航栏下方的整个网页高度 */
         position: fixed;
         right: 0;
-        top: 88px; /* 从导航栏底部开始 */
+        top: 88px;
+        /* 从导航栏底部开始 */
         background-color: #fff;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; /* 从上方开始显示菜单项 */
+        justify-content: flex-start;
+        /* 从上方开始显示菜单项 */
         display: none;
         z-index: 10;
     }
@@ -273,14 +300,17 @@ header {
         height:100vh;
         */
         width: 100%;
-        height: calc(100vh - 88px); /* 使菜单栏占据导航栏下方的整个网页高度 */
+        height: calc(100vh - 88px);
+        /* 使菜单栏占据导航栏下方的整个网页高度 */
         position: fixed;
         right: 0;
-        top: 88px; /* 从导航栏底部开始 */
+        top: 88px;
+        /* 从导航栏底部开始 */
         background-color: #fff;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; /* 从上方开始显示菜单项 */
+        justify-content: flex-start;
+        /* 从上方开始显示菜单项 */
         display: none;
         z-index: 10;
     }
@@ -302,7 +332,7 @@ header {
 
 
 /*新的*/
-.frontPage{
+.frontPage {
     width: 100%;
     height: 112px;
     flex-shrink: 0;
@@ -315,7 +345,8 @@ header {
     letter-spacing: 6.72px;
     margin-top: 112px;
 }
-.frontPageWord{
+
+.frontPageWord {
     width: 100%;
     height: 170px;
     flex-shrink: 0;
@@ -327,37 +358,39 @@ header {
     font-weight: 600;
     line-height: normal;
     letter-spacing: 3px;
-    margin-top: 51px;
+    margin-top: 140px;
 }
-.start-button{
+
+.start-button {
     width: 464px;
     height: 148px;
     flex-shrink: 0;
-    font-size:75px;
+    font-size: 75px;
     font-family: 微軟正黑體;
-    border:solid 3px;
-    border-radius:15px;
-    display:inline-block;
-    padding:10px 20px;
-    background-color:white;
-    color:#D6E0DE;
-    cursor:pointer;
-    margin-top:30px;
+    border: solid 3px;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: #D6E0DE;
+    cursor: pointer;
+    margin-top: 30px;
     margin-bottom: 21px;
 }
 
-.start-button:hover{
-    background-color:#D6E0DE;
-    color:white;
+.start-button:hover {
+    background-color: #D6E0DE;
+    color: white;
 }
 
 .active {
-    display: block; /* 只顯示當前問題 */
+    display: block;
+    /* 只顯示當前問題 */
 }
 
 
 
-.question{
+.question {
     color: #000;
     text-align: center;
     font-family: Oswald;
@@ -366,21 +399,26 @@ header {
     font-weight: 600;
     line-height: normal;
     letter-spacing: 3px;
-    margin:auto;
-    width:1000px;
-    height:600px;
+    margin: auto;
+    width: 1000px;
+    height: 600px;
     flex-direction: column;
     align-items: center;
 }
 
 label input[type="radio"] {
     position: absolute;
-    opacity: 0; /* 隱藏單選框，並保留其功能 */
+    opacity: 0;
+    /* 隱藏單選框，並保留其功能 */
 }
 
-.illustration{
-    width: 100%; /* 可根據需要調整寬度 */
-    height: 40%; /* 確保圖片比例不變 */
+.illustration {
+    /* 可根據需要調整寬度 */
+    width: 100%;
+    height: 40%;
+    margin-top: 20px;
+
+    /* 確保圖片比例不變 */
     img {
         object-fit: cover;
         width: 50%;
@@ -388,19 +426,37 @@ label input[type="radio"] {
     }
 }
 
+.cover {
+    width: 100%;
+    /* 可根據需要調整寬度 */
+    height: 40%;
+
+    /* 確保圖片比例不變 */
+    img {
+        width: 50%;
+        height: 90%;
+    }
+}
 
 /* 按鈕樣式 */
 label {
-    display: block;  /* 讓每個選項獨占一行 */
-    width:700px;
-    background-color: #7B5F49;  /* 背景顏色：棕色 */
+    display: block;
+    /* 讓每個選項獨占一行 */
+    width: 700px;
+    background-color: #7B5F49;
+    /* 背景顏色：棕色 */
     border: 3px solid goldenrod;
-    color:white;
-    padding: 16px;  /* 內邊距 */
-    border-radius: 12px;  /* 圓角 */
-    margin-top: 10px;  /* 上邊距 */
-    cursor: pointer;  /* 滑鼠移上去時變成手型 */
-    font-size: 16px;  /* 字體大小 */
+    color: white;
+    padding: 16px;
+    /* 內邊距 */
+    border-radius: 12px;
+    /* 圓角 */
+    margin-top: 10px;
+    /* 上邊距 */
+    cursor: pointer;
+    /* 滑鼠移上去時變成手型 */
+    font-size: 16px;
+    /* 字體大小 */
     margin-bottom: 20px;
     z-index: 10;
 }
@@ -408,60 +464,82 @@ label {
 
 /* 單選按鈕樣式 */
 input[type="radio"] {
-    margin-right: 10px;  /* 和文字之間的間距 */
+    margin-right: 10px;
+    /* 和文字之間的間距 */
 }
 
 /* 滑鼠移上去時選項的變化 */
 label:hover {
-    background-color:orange;
+    background-color: orange;
 }
 
 /* 問題文本區塊樣式 */
 p {
-    text-align: center;  /* 文字置中 */
-    margin-bottom: 20px;  /* 底部留白 */
+    text-align: center;
+    /* 文字置中 */
+    margin-bottom: 20px;
+    /* 底部留白 */
 }
 
 
 
 
 .progress-bar {
-    position: absolute; /* 設置為絕對定位 */
-    left: 20px; /* 左邊距 */
-    top: 50%; /* 垂直居中 */
-    transform: translateY(-40%); /* 垂直居中 */
-    height: 500px; /* 設定高度 */
-    width: 20px; /* 設定寬度 */
+    position: absolute;
+    /* 設置為絕對定位 */
+    left: 20px;
+    /* 左邊距 */
+    top: 50%;
+    /* 垂直居中 */
+    transform: translateY(-40%);
+    /* 垂直居中 */
+    height: 500px;
+    /* 設定高度 */
+    width: 20px;
+    /* 設定寬度 */
     background-color: #ddd;
     border-radius: 10px;
     margin-bottom: 20px;
-    z-index: 1; /* 確保在其他元素之上 */
+    z-index: 1;
+    /* 確保在其他元素之上 */
 }
 
 .progress {
-    height: 0; /* 初始高度 */
-    width: 100%; /* 寬度為100% */
+    height: 0;
+    /* 初始高度 */
+    width: 100%;
+    /* 寬度為100% */
     background-color: #FFD700;
     border-radius: 10px;
-    transition: height 0.5s ease; /* 添加過渡效果 */
+    transition: height 0.5s ease;
+    /* 添加過渡效果 */
 }
 
 .fish-icon {
-    position: absolute; /* 絕對定位 */
-    left: 50%; /* 置中 */
-    transform: translateX(-50%); /* 水平居中 */
-    height: 40px; /* 魚的高度 */
-    width: 40px; /* 魚的寬度 */
-    background-size: cover; /* 確保圖片填滿 */
-    transition: bottom 0.5s ease; /* 平滑過渡 */
-    bottom: calc(100% - 20px); /* 初始位置在進度條頂部 */
+    position: absolute;
+    /* 絕對定位 */
+    left: 50%;
+    /* 置中 */
+    transform: translateX(-50%);
+    /* 水平居中 */
+    height: 40px;
+    /* 魚的高度 */
+    width: 40px;
+    /* 魚的寬度 */
+    background-size: cover;
+    /* 確保圖片填滿 */
+    transition: bottom 0.5s ease;
+    /* 平滑過渡 */
+    bottom: calc(100% - 20px);
+    /* 初始位置在進度條頂部 */
 }
 
 .fish-icon img {
-    width: 40px; /* 設定寬度以保證正確顯示 */
-    height: auto; /* 保持圖片的縱橫比 */
+    width: 40px;
+    /* 設定寬度以保證正確顯示 */
+    height: auto;
+    /* 保持圖片的縱橫比 */
 }
-
 
 /* 手機和平板響應式設計 */
 @media screen and (max-width: 768px) {
@@ -477,13 +555,16 @@ p {
     .main-page h4 {
         font-size: 1.1em;
     }
-    .frontPageWord{
-        font-size:  2vw; /* 調整字體大小 */
+
+    .frontPageWord {
+        font-size: 2vw;
+        /* 調整字體大小 */
         font-size: 15px !important;
-        margin:0 auto;
+        margin: 0 auto;
         width: 80%;
 
     }
+
     .start-button {
         width: 50%;
         height: 50%;
@@ -494,17 +575,19 @@ p {
 
     .question p {
         font-size: 1.1em;
-        font-size: 2vw; /* 調整字體大小 */
+        font-size: 2vw;
+        /* 調整字體大小 */
     }
 
-    .question{
+    .question {
         font-size: 0.5em !important;
-        margin:0 auto;
+        margin: 0 auto;
         width: 80%;
     }
-    .label{
-        font-size:  2vw;
-        margin:0 auto;
+
+    .label {
+        font-size: 2vw;
+        margin: 0 auto;
         width: 100%;
         height: 50%;
         padding: 10px 20px;
@@ -526,23 +609,25 @@ p {
         padding: 8px 16px;
         width: 80%;
     }
-    .frontPageWord{
+
+    .frontPageWord {
         font-size: clamp(5px, 4vw, 16px) !important;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
     .question p {
         font-size: 1em;
     }
 
-    .question{
+    .question {
         font-size: 0.5em !important;
-        margin:0 auto;
+        margin: 0 auto;
         width: 80%;
     }
-    .label{
-        font-size: 0.2em ;
-        margin:0 auto;
+
+    .label {
+        font-size: 0.2em;
+        margin: 0 auto;
         padding: 10px 20px;
         height: auto;
         max-width: 100%;

@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 24px;
+    font-family: oswald;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    max-height: 100%;
+}
+
+article {
+    flex-grow: 1; /* 讓 article 填充剩餘的空間 */
+    padding-bottom: 30px; /* 給 footer 一點空間 */
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    background: linear-gradient(180deg, #FDFCFB 0%, #E2D1C3 100%);
+    overflow-x: hidden;
+    min-height: 100vh;
+    padding-top: 88px;
+}
+
+header {
+    height: 700px;
+    width: 100%;
+}
+
+.menu {
+    background-color: #FE9858;
+    padding: 0 5px 0 16px;
+    height: 88px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu.scrolled {
+    background-color: rgba(254, 152, 88, 0.8); /* 变成更透明 */
+    backdrop-filter: blur(10px); /* 添加模糊效果 */
+}
+
+.menu h1 {
+    float: left;
+}
+
+.menu h1 a {
+    display: block;
+    background-image: url(https://images2.imgbox.com/96/0c/G1gO1j7e_o.png);
+    width: 229px;
+    height: 88px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-left: 3px;
+}
+
+.menu ul li a {
+    font-size: 20px;
+    display: block;
+    font-weight: 600;
+    width: 130px;
+    height: 50px;
+    line-height: 29px;
+    margin: 10px 13px 16px 5px;
+    padding: 10px 0;
+    color: #8C6C57;
+    background-color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    border: 5px solid transparent; /* 初始狀態下邊框透明 */
+    transition: border 0.3s ease; /* 增加邊框過渡效果 */
+}
+
+.menu ul li a:hover {
+    border: 5px solid #7B5F49; /* 設置咖啡色邊框 */
+}
+
+.icon {
+    display: none; /* Consider adding media queries for responsiveness */
+    font-size: 36px;
+    cursor: pointer;
+    color: #FFF;
+    padding: 20px 5% 0 40%;
+}
+
+#loadingPage {
+    margin: 0 auto;
+}
+
+.gift-text {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.progress-bar {
+	position: absolute; /* 設置為絕對定位 */
+	left: 20px; /* 左邊距 */
+	top: 50%; /* 垂直居中 */
+	transform: translateY(-40%); /* 垂直居中 */
+	height: 500px; /* 設定高度 */
+	width: 20px; /* 設定寬度 */
+	background-color: #ddd;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	z-index: 1; /* 確保在其他元素之上 */
+}
+
+.progress {
+	height: 100%;  /* 更新高度 */
+	width: 100%; /* 寬度為100% */
+	background-color: #FFD700;
+	border-radius: 10px;
+	transition: height 0.5s ease; /* 添加過渡效果 */
+}
+
+.fish-icon {
+	position: absolute; /* 絕對定位 */
+	left: 50%; /* 置中 */
+	transform: translateX(-50%); /* 水平居中 */
+	height: 40px; /* 魚的高度 */
+	width: 40px; /* 魚的寬度 */
+	background-size: cover; /* 確保圖片填滿 */
+	transition: bottom 0.5s ease; /* 平滑過渡 */
+	bottom: calc(100% - 520px); 
+}
+
+.fish-icon img {
+	width: 40px; /* 設定寬度以保證正確顯示 */
+	height: auto; /* 保持圖片的縱橫比 */
+}
+
+/* 最後結果的彈出框 */
+.modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 最後結果的文字內容 */
+.modal-content {
+	background: white;
+	padding: 20px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+/* 最後結果彈出框的確定按鈕 */
+.result-button {
+	background-color: #FFA07A; /* 淺橘色背景 */
+	color: white; /* 白色文字 */
+	border: none; /* 去掉邊框 */
+	padding: 10px 20px; /* 上下和左右的內邊距 */
+	text-align: center; /* 文字居中 */
+	text-decoration: none; /* 去掉下劃線 */
+	display: inline-block; /* 使按鈕在行內顯示 */
+	font-size: 16px; /* 字體大小 */
+	margin: 10px 2px; /* 外邊距 */
+	cursor: pointer; /* 游標變成手型 */
+	border-radius: 5px; /* 圓角邊框 */
+	transition: background-color 0.3s; /* 漸變效果 */
+}
+
+.result-button:hover {
+	background-color: #FF8C69; /* 鼠標懸停時的深橘色 */
+}
+
+.hidden {
+	display: none;
+}
