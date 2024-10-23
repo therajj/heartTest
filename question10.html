@@ -88,7 +88,7 @@
           </label><br>
           <div class="flex-block">
 
-            <!-- 提示區域 -->
+            <!-- 秀提示文字區域 -->
             <div id="hint" style="display: flex;">
               <img id="final-hint" src="images/hachi.png" alt="提示角色" class="hint-img" id="hint-img">
               <p class="hint">是不是想不到呢？<br />點我領取提示！</p>
@@ -102,30 +102,32 @@
 
         <!-- 顯示提示的區域 -->
         <div id="hintModal" class="modal hidden">
+          <!-- 彈出框內容 -->
           <div class="modal-content">
             <h2>提示</h2>
-            <div style="display: flex;">
+            <div style="display: flex;justify-content: space-around;">
               <!-- 影片區 -->
-              <div style="margin-right: 20px;">
+              <div class="video-content">
                 <p id="resultText">
                   影片區
-                <div style="background: cornsilk;width: 200px; height:200px;"></div>
+                <div style="background: cornsilk;height:400px;"></div>
                 </p>
               </div>
               <!-- 文字簡介區 -->
-              <div>
+              <div class="text-content">
                 <p id="resultText">
                   文字簡介區
-                <div style="background: cornsilk;width: 200px; height:200px;"></div>
-                </p>
+                <div style="background: cornsilk;height:400px;"></div>
               </div>
             </div>
+            <!-- 彈出框按鈕 -->
             <button class="result-button" onclick="closeHintModal()">確定</button>
           </div>
         </div>
-
       </div>
+
     </div>
+  </div>
   </div>
 
   </div>

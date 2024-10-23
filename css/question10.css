@@ -693,12 +693,24 @@ p {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* 彈出框文字內容 */
+/* 整個彈出框內容 */
 .modal-content {
   background: white;
   padding: 20px;
   border-radius: 5px;
   text-align: center;
+  width: calc(75vw); /* 設定寬度為螢幕寬度的四分之三 */
+}
+
+/* 彈出框內影片區內容 */
+.video-content {
+  margin-right: 20px;
+  width: calc(35vw); /* 設定寬度為modal-content的約一半（上面） */
+}
+
+/* 彈出框內影片區內容 */
+.text-content {
+  width: calc(35vw); /* 設定寬度為modal-content的約一半（上面） */
 }
 
 /* 最後結果彈出框的確定按鈕 */
