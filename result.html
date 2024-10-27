@@ -39,8 +39,9 @@
             <div id="resultImage" style="background: cornsilk; width: 400px; height: 400px; margin-bottom: 20px;"></div>
           </div>
         </div>
-        <button id="downloadButton" type="button" class="resultButton" onclick="downloadSpecificImage()">儲存 並
-          領取你的專屬結果圖</button>
+        <button type="button" class="resultButton" onclick="downloadSpecificImage()">
+          儲存 並領取你的專屬結果圖
+        </button>
       </div>
 
   </div>
@@ -49,21 +50,6 @@
 
   <script src="js/result.js" defer></script>
   <script src="js/nav.js"></script>
-  <script>
-    document.getElementById('downloadButton').onclick = function (event) {
-      event.preventDefault(); // 防止按鈕的預設行為
-
-      const imgElement = document.getElementById('resultImage');
-      const link = document.createElement('a');
-      link.href = imgElement.src; // 獲取圖片的 URL
-      link.download = 'influencer.png'; // 設定下載的檔案名稱
-
-      // 確保圖片可以在按鈕點擊時下載
-      document.body.appendChild(link);
-      link.click(); // 觸發下載
-      document.body.removeChild(link); // 移除鏈接
-    };
-  </script>
 </body>
 
 </html>

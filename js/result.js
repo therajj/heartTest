@@ -9,7 +9,6 @@ let scores = {
 window.onload = function () {
   // 獲取分數
   scores = JSON.parse(localStorage.getItem('scores'));
-  console.log('**in', scores)
 
   if (!scores || Object.keys(scores).length === 0) {
     scores = {
@@ -22,14 +21,13 @@ window.onload = function () {
 
   // 判斷最高的類別
   const maxCategory = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-  const resultImageDiv = document.getElementById('resultImage');
   let imageUrl;
   let resultText = ''; // 初始化結果文本
-  console.log({maxCategory})
+
   // 設定圖片 URL
   switch (maxCategory) {
       case 'influencer':
-          imageUrl = 'https://imgur.com/a/bVpgzWc';
+          imageUrl = 'images/specific-result/influencer.png';
           resultText = '你是「網美」類型，喜歡拍照打卡！';
           break;
       case 'nature':
@@ -49,72 +47,23 @@ window.onload = function () {
           return; // 如果沒有匹配，則退出
   }
 
-  // 創建圖片元素
-  const imgElement = document.createElement('img');
-  imgElement.src = imageUrl; // 設置圖片來源
-  imgElement.alt = maxCategory;
-  imgElement.style.width = '100%'; // 根據需要調整大小
-  imgElement.style.height = 'auto'; // 根據需要調整大小
+// 創建圖片元素
+const imgElement = document.createElement('img');
+imgElement.src = imageUrl; // 設置圖片來源
+imgElement.alt = maxCategory;
+imgElement.style.width = '100%'; // 根據需要調整大小
+imgElement.style.height = 'auto'; // 根據需要調整大小
 
-  // 將圖片添加到顯示區域
-  resultImageDiv.appendChild(imgElement);
+// 將圖片添加到顯示區域
+const resultImageDiv = document.getElementById('resultImage'); // 確保這裡獲取到正確的 div
+resultImageDiv.appendChild(imgElement); // 將圖片插入到指定的 div 中
 
-  // 更新結果文本
-  const resultDiv = document.getElementById('result');
-  resultDiv.innerText = resultText;
-
-  // 確保此時 imgElement.src 已被設置
-  console.log('Image URL:', imgElement.src); // 檢查圖片 URL
+// 更新結果文本
+const resultDiv = document.getElementById('result');
+resultDiv.innerText = resultText;
 };
-
-// 下載專屬結果圖
-// function downloadSpecificImage() {
-//   // 根據分數判斷最高的類別
-//   const maxCategory = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-//   const resultImageDiv = document.getElementById('resultImage');
-
-//   const link = document.createElement('a');
-//   console.log('Image URL:', resultImageDiv.src); // 檢查圖片 URL
-
-//   if (!resultImageDiv.src) {
-//     console.warn('圖片來源未設置');
-//     return; // 如果圖片來源未設置，則退出
-// }
-//   // 替換為圖片 URL
-//   link.href = document.getElementById('resultImage').src; 
-//   console.log(document.getElementById('resultImage').src)
-// // 設定下載的檔案名稱
-//   switch (maxCategory) {
-//     case 'influencer':
-//       link.download = 'influencer.png'; 
-//       break;
-//     case 'nature':
-//       link.download = 'nature.png'; 
-//       break;
-//     case 'nostalgia':
-//       link.download = 'nostalgia.png'; 
-//       break;
-//     case 'foodie':
-//       link.download = 'foodie.png'; 
-//       break;
-//   }
-
-//   document.body.appendChild(link);
-//   link.click();
-//   document.body.removeChild(link);
-// }
 
 function downloadSpecificImage() {
   const imgElement = document.querySelector('#resultImage img'); // 獲取圖片元素
-
-  if (!imgElement || !imgElement.src) {
-      console.warn('圖片元素未找到或未設置 src');
-      return; // 如果圖片元素未找到或 src 未設置，則退出
-  }
-
-  const link = document.createElement('a');
-  link.href = imgElement.src; // 獲取圖片的 URL
-  document.body.appendChild(link);
-  link.click(); // 觸發下載
-  document.body.removeChild(link); // 移除鏈接
+  window.open(imgElement.src, '_blank'); // 在新分頁中打開圖片
 }
