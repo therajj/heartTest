@@ -388,8 +388,6 @@ header {
   /* 只顯示當前問題 */
 }
 
-
-
 .question {
   color: #000;
   text-align: center;
@@ -481,9 +479,6 @@ p {
   /* 底部留白 */
 }
 
-
-
-
 .progress-bar {
   position: absolute;
   /* 設置為絕對定位 */
@@ -536,9 +531,7 @@ p {
 
 .fish-icon img {
   width: 40px;
-  /* 設定寬度以保證正確顯示 */
   height: auto;
-  /* 保持圖片的縱橫比 */
 }
 
 /* 手機和平板響應式設計 */
@@ -548,12 +541,20 @@ p {
     font-size: 2vw;
   }
 
+  .main-page {
+    margin-top: 50px;
+  }
+
   .main-page h1 {
     font-size: 2.2em;
   }
 
   .main-page h4 {
     font-size: 1.1em;
+  }
+
+  .main-page .start-button {
+    margin-top: 300px;
   }
 
   .frontPageWord {
@@ -565,6 +566,14 @@ p {
 
   }
 
+  .container-background {
+  background:     url(../images/cover.png) #fde4cf;
+    background-size: 100%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    /* background-color: linear-gradient(180deg, #FDFCFB 0%, #E2D1C3 100%); */
+  }
+
   .start-button {
     width: 50%;
     height: 50%;
@@ -574,23 +583,48 @@ p {
   }
 
   .question p {
-    font-size: 1.1em;
-    font-size: 2vw;
-    /* 調整字體大小 */
+    font-size: 3.5vw;
+    margin-bottom: 10px;
   }
 
   .question {
-    font-size: 0.5em !important;
-    margin: 0 auto;
     width: 80%;
+    height: 100%;
   }
 
-  .label {
-    font-size: 2vw;
-    margin: 0 auto;
+  .question .illustration{
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+
+  .question .illustration img{
     width: 100%;
-    height: 50%;
+    height: 100%;
+  }
+
+  .question label {
+    font-size: 3.5vw;
+    width: 100%;
+    height: 60px;
     padding: 10px 20px;
+    align-content: center;
+    margin-bottom: 10px;
+  }
+
+  /* 變成橫向 */
+  .progress-bar {
+    width: 80%;
+    height: 20px;
+    left: 10%; 
+    top: 110px; 
+    transform: none;
+  }
+
+  /* 調整魚變成從左邊開始 */
+  .fish-icon {
+    left: 0%;
+    transform: translateX(-15%);
+    bottom: calc(100% - 30px);
   }
 }
 
@@ -613,16 +647,6 @@ p {
   .frontPageWord {
     font-size: clamp(5px, 4vw, 16px) !important;
     margin: 0 auto;
-  }
-
-  .question p {
-    font-size: 1em;
-  }
-
-  .question {
-    font-size: 0.5em !important;
-    margin: 0 auto;
-    width: 80%;
   }
 
   .label {

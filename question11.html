@@ -17,6 +17,19 @@
       display: block;
       /* 只顯示當前問題 */
     }
+
+    @media screen and (max-width: 768px) {
+      .progress {
+        width: 90%;
+      }
+
+      /* 調整魚變成從左邊開始 */
+      .fish-icon {
+        left: 88%;
+        transform: translateX(-15%);
+        bottom: calc(100% - 30px);
+      }
+    }
   </style>
 </head>
 
@@ -47,9 +60,9 @@
       </nav>
       <!-- 進度條容器 -->
       <div class="progress-bar">
-        <!-- 進度條增加到95%，可以自行更改 -->
+        <!-- 進度條增加到92%，可以自行更改 -->
         <div class="progress" style="height:92%;"></div>
-        <div class="fish-icon" style="bottom: calc(100% - 480px);">
+        <div class="fish-icon">
           <img src="images/fish.png" alt="Fish">
         </div>
       </div>

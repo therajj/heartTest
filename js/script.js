@@ -68,18 +68,32 @@ function updateProgress() {
     currentQuestion++;
     const progressPercentage = (currentQuestion / totalQuestions) * 100;
 
-    // 獲取進度條目前的寬度
+    // 獲取進度條目前的高度或寬度
     const progressElement = document.querySelector('.progress');
 
-    // 更新進度條的高度
-    progressElement.style.height = progressPercentage + '%';
+    // 判斷螢幕尺寸，更新進度條的高度或寬度
+    if (window.innerWidth <= 768) { // 手機尺寸
+      progressElement.style.width = progressPercentage + '%'; // 設定寬度為進度百分比
+      progressElement.style.height = '20px'; // 設定固定高度
+    } else { // 桌面尺寸
+      progressElement.style.height = progressPercentage + '%'; // 設定高度為進度百分比
+      progressElement.style.width = '20px'; // 設定固定寬度
+    }
 
     // 獲取魚的圖標元素
     const fishIcon = document.querySelector('.fish-icon');
 
-    // 計算進度條的實際高度
-    const progressHeight = (progressPercentage / 100) * 500; // 假設進度條高度是500px
-    fishIcon.style.bottom = `calc(100% - ${progressHeight + 5}px)`;  // 直接設置為進度條的高度
+    if (window.innerWidth <= 768) {
+      // 計算進度條的實際寬度
+      const progressWidth = document.querySelector('.progress').clientWidth; // 獲取進度條的寬度
+      console.log({progressWidth})
+      fishIcon.style.left = `${progressWidth-20}px`; // 設置魚的圖標位置
+    } else {
+      // 計算進度條的實際高度
+      const progressHeight = (progressPercentage / 100) * 500; // 假設進度條高度是500px
+      console.log({progressHeight})
+      fishIcon.style.bottom = `calc(100% - ${progressHeight + 5}px)`; // 調整魚的圖標位置
+    }
   }
 }
 
@@ -167,19 +181,3 @@ function closeHintModal() {
   // 隱藏結果彈出框
   document.getElementById('hintModal').classList.add('hidden');
 }
-
-// 跳轉到下一個html, path是html的路徑, time是如果有需要等待的時間
-function jumpToNextPage(path, time) {
-  // 如果需要等待
-  if (time) {
-    // 設定跳轉時間，例如2秒後跳轉到結果頁或下一頁
-    setTimeout(function () {
-      window.location.href = path;
-      // 這裡可以改成結果頁或下一步的網頁
-    }, time);  // ex: 2000 毫秒 = 2 秒
-  }
-  // 直接跳轉
-  else {
-    window.location.href = path;
-  }
-} 

@@ -27,20 +27,13 @@
       <!-- 心理測驗首頁 -->
       <div class="main-page" id="loadingPage" style="text-align:center">
 
-        <p>
-          你太幸運了！！恭喜獲得...
-        </p>
-
         <!-- 儲存圖片區 -->
         <div style="display: flex;justify-content: center;align-items: center;flex-direction: column">
           <!-- 暫時的結果顯示區 -->
-          <div style="background: cornsilk;width: 400px; height:400px; margin-bottom:20px;">
-            <div id="resultImage" style="background: cornsilk; width: 400px; height: 400px; margin-bottom: 20px;"></div>
-          </div>
+          <div id="resultImage" style="margin-bottom: 20px;"></div>
         </div>
-        <button type="button" class="resultButton"
-          onclick="downloadSpecificImage(); jumpToNextPage('finalresult.html', 0)">
-          儲存 並 領取你的專屬結果圖
+        <button type="button" class="resultButton" onclick="downloadFinalImage()">
+          儲存 並領取你的專屬結果圖
         </button>
 
       </div>
@@ -49,7 +42,7 @@
   </form>
   </div>
 
-  <script src="js/result.js" defer></script>
+  <script src="js/final-result.js" defer></script>
   <script src="js/nav.js"></script>
 </body>
 

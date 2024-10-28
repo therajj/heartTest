@@ -284,17 +284,6 @@ header {
 
 @media (max-width: 480px) {
   .menu ul {
-    /*
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          right: 0;
-          top: 90px;
-          background-color: #fff;
-          width: 200px;
-          text-align: right;
-    height:100vh;
-    */
     width: 100%;
     height: calc(100vh - 88px);
     /* 使菜单栏占据导航栏下方的整个网页高度 */
@@ -699,18 +688,21 @@ p {
   padding: 20px;
   border-radius: 5px;
   text-align: center;
-  width: calc(75vw); /* 設定寬度為螢幕寬度的四分之三 */
+  width: calc(75vw);
+  /* 設定寬度為螢幕寬度的四分之三 */
 }
 
 /* 彈出框內影片區內容 */
 .video-content {
   margin-right: 20px;
-  width: calc(35vw); /* 設定寬度為modal-content的約一半（上面） */
+  width: calc(35vw);
+  /* 設定寬度為modal-content的約一半（上面） */
 }
 
 /* 彈出框內影片區內容 */
 .text-content {
-  width: calc(35vw); /* 設定寬度為modal-content的約一半（上面） */
+  width: calc(35vw);
+  /* 設定寬度為modal-content的約一半（上面） */
 }
 
 /* 最後結果彈出框的確定按鈕 */
@@ -744,4 +736,56 @@ p {
 .result-button:hover {
   background-color: #FF8C69;
   /* 鼠標懸停時的深橘色 */
+}
+
+/* 手機和平板響應式設計 */
+@media screen and (max-width: 768px) {
+  .container2 {
+    flex-direction: column;
+  }
+
+  .image-area {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .location-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .right-area{
+    width: 100%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label{
+    width: 80%;
+  }
+
+  /* 變成橫向 */
+  .progress-bar {
+    width: 80%;
+    height: 20px;
+    left: 10%;
+    top: 110px;
+    transform: none;
+  }
+
+  .progress {
+    width: 85%;
+  }
+
+  /* 調整魚變成從左邊開始 */
+  .fish-icon {
+    left: 82%;
+    transform: translateX(-15%);
+    bottom: calc(100% - 30px);
+  }
 }

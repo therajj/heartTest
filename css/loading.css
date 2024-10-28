@@ -648,3 +648,10 @@ header {
     transform: rotate(360deg);
   }
 }
+
+/* 手機和平板響應式設計 */
+@media screen and (max-width: 768px) {
+  .loadingText {
+    width: 100%;
+  }
+}

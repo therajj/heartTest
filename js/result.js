@@ -43,8 +43,7 @@ window.onload = function () {
           resultText = '你是「老饕」類型，熱愛美食！';
           break;
       default:
-          console.warn('未匹配的類別:', maxCategory);
-          return; // 如果沒有匹配，則退出
+          return; // 沒有匹配，則退出
   }
 
 // 創建圖片元素
