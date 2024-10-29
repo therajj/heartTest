@@ -32,7 +32,7 @@ window.onload = function () {
       imageUrl = 'images/final-result/nature.png';
       break;
     case 'nostalgia':
-      imageUrl = 'https://final.com/uC09OtC';
+      imageUrl = 'images/final-result/nostalgia.png';
       break;
     case 'foodie':
       imageUrl = 'images/final-result/foodie.png';

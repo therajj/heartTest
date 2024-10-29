@@ -35,33 +35,31 @@
 
 <body>
   <div class="container">
-    <div>
-    </div>
+    <nav class="menu">
+
+      <h1>
+        <a href="home.html"></a>
+      </h1>
+
+
+      <ul>
+        <li><a href="#">讀嘉診療所</a></li>
+        <li><a href="vlog.html">嘉一點vlog</a></li>
+
+        <li><a href="article.html">讀嘉記義</a></li>
+        <li><a href="about.html">1+1=4</a></li>
+
+      </ul>
+      <!-- 漢堡按鈕 -->
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+
+    </nav>
     <div class="container2">
 
-      <nav class="menu">
 
-        <h1>
-          <a href="home.html"></a>
-        </h1>
-
-
-        <ul>
-          <li><a href="#">讀嘉診療所</a></li>
-          <li><a href="vlog.html">嘉一點vlog</a></li>
-
-          <li><a href="article.html">讀嘉記義</a></li>
-          <li><a href="about.html">1+1=4</a></li>
-
-        </ul>
-        <!-- 漢堡按鈕 -->
-        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
-
-      </nav>
       <!-- 進度條容器 -->
       <div class="progress-bar">
-        <!-- 進度條增加到92%，可以自行更改 -->
-        <div class="progress" style="height:92%;"></div>
+        <div class="progress"></div>
         <div class="fish-icon">
           <img src="images/fish.png" alt="Fish">
         </div>
@@ -69,7 +67,7 @@
 
       <!-- 圖片展示區 -->
       <div class="image-area">
-        <h3 id="teacher1">(第二個互動區)</h3>
+        <h3 id="teacher1">（第二個互動區）</h3>
         <img src="photos/museum.jpg" alt="Location Image" class="location-img">
         <!-- 隐藏的提示框 -->
         <div id="hintBox" style="margin-top:20px;display:none;">
@@ -100,13 +98,17 @@
           <label>
             <input type="radio" name="answer" value="wrong"> 東門町派出所
           </label><br>
-          <div class="flex-block">
-            <!-- 提示區域 -->
-            <div id="hint" style="display: flex;">
+
+          <div class="hint-area">
+            <!-- 秀提示文字區域 -->
+            <div id="hint" style="display: flex;justify-content: center;align-items: center;">
               <img id="final-hint" src="images/hachi.png" alt="提示角色" class="hint-img" id="hint-img">
               <p class="hint">是不是想不到呢？<br />點我領取提示！</p>
             </div>
+
+            <!-- 按下確認後，跳到下一個提示頁面 -->
             <button type="button" id="submit-btn" onclick="checkAnswerTwo()">確認</button>
+
           </div>
         </form>
 
@@ -115,40 +117,40 @@
           <!-- 彈出框內容 -->
           <div class="modal-content">
             <h2>提示</h2>
-            <div style="display: flex;justify-content: space-around;">
+            <div class="modal-content-inner">
               <!-- 影片區 -->
               <div class="video-content">
                 <p id="resultText">
                   影片區
-                <div style="background: cornsilk;height:400px;"></div>
+                <div class="video-content-inner"></div>
                 </p>
               </div>
               <!-- 文字簡介區 -->
               <div class="text-content">
                 <p id="resultText">
                   文字簡介區
-                <div style="background: cornsilk;height:400px;"></div>
+                <div class="text-content-inner"></div>
               </div>
             </div>
             <!-- 彈出框按鈕 -->
             <button class="result-button" onclick="closeHintModal()">確定</button>
           </div>
         </div>
-
       </div>
+
     </div>
+  </div>
   </div>
 
   </div>
   <script src="js/script.js"></script>
   <script src="js/nav.js"></script>
   <script>
+    // 顯示被隱藏的提示區
     document.getElementById('hint').addEventListener('click', function () {
       const hintModal = document.getElementById('hintModal');
-      // 顯示提示區
       hintModal.classList.remove('hidden');
     });
-
   </script>
 </body>
 

@@ -428,7 +428,7 @@ h3#teacher2 {
   margin-right: 20px;
 }
 
-#submit-btn.hover {
+#submit-btn:hover {
   background-color: #D6E0DE;
   color: white;
 }
@@ -495,7 +495,7 @@ p {
 }
 
 /* 置中樣式 */
-.flex-block {
+.hint-area {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -692,7 +692,12 @@ p {
   /* 設定寬度為螢幕寬度的四分之三 */
 }
 
-/* 彈出框內影片區內容 */
+.modal-content-inner {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 彈出框內影片區容器 */
 .video-content {
   margin-right: 20px;
   width: calc(35vw);
@@ -700,9 +705,21 @@ p {
 }
 
 /* 彈出框內影片區內容 */
+.video-content-inner {
+  background: cornsilk;
+  height:400px;
+}
+
+/* 彈出框內文字區容器 */
 .text-content {
   width: calc(35vw);
   /* 設定寬度為modal-content的約一半（上面） */
+}
+
+/* 彈出框內文字區內容 */
+.text-content-inner {
+  background: cornsilk;
+  height:400px;
 }
 
 /* 最後結果彈出框的確定按鈕 */
@@ -760,13 +777,24 @@ p {
     width: 100%;
   }
 
+  .hint-area {
+    flex-direction: column;
+  }
+
+  .hint-img {
+    margin-right: 20px;
+  }
+
   form {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   label{
     width: 80%;
+    margin: 0;
+    text-align: center;
   }
 
   /* 變成橫向 */
@@ -787,5 +815,43 @@ p {
     left: 82%;
     transform: translateX(-15%);
     bottom: calc(100% - 30px);
+  }
+
+  .video-content {
+    margin: 0;
+    width: calc(65vw);
+  }
+
+  .video-content-inner {
+    background: cornsilk;
+    height:200px;
+  }
+
+  .video-content p {
+    font-size: 20px;
+  }
+
+  .text-content {
+    margin: 0;
+    width: calc(65vw);
+  }
+
+  .text-content-inner {
+    background: cornsilk;
+    height:200px;
+  }
+
+  .text-content p {
+    font-size: 20px;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content-inner {
+    flex-direction: column;
   }
 }

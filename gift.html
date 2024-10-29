@@ -26,14 +26,6 @@
     <form id="quizForm">
       <!-- 心理測驗首頁 -->
       <div class="main-page" id="loadingPage" style="text-align:center">
-        <!-- 進度條容器 -->
-        <div id="progressBar" class="progress-bar">
-          <div class="progress"></div>
-          <div class="fish-icon">
-            <img src="images/fish.png" alt="Fish">
-          </div>
-        </div>
-
         <h1>選出你心中的最嘉禮物！</h1>
         <p>
           終於來到了旅程的最後一站！<br />
@@ -42,7 +34,7 @@
         </p>
 
         <!-- 禮物圖片區 -->
-        <div style="display: flex;">
+        <div class="gifts">
           <div id="influencer"
             onclick="addScoreAndNext('currentQuestion', { influencer: 1, nature: 0, nostalgia: 0, foodie: 0 })">
             <img src="images/pink-gift.png" alt="Influencer Gift" style="width:10%;height:auto;">

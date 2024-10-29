@@ -35,7 +35,7 @@ window.onload = function () {
           resultText = '你是「自然」類型，喜歡親近大自然！';
           break;
       case 'nostalgia':
-        imageUrl = 'https://imgur.com/uC09OtC';
+        imageUrl = 'images/specific-result/nostalgia.png';
         resultText = '你是「懷舊」類型，喜歡懷舊風格！';
           break;
       case 'foodie':

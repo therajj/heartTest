@@ -125,65 +125,13 @@ header {
   margin: 0 auto;
 }
 
+.gifts {
+  display: flex;
+}
+
 .gift-text {
   font-size: 16px;
   font-weight: bold;
-}
-
-.progress-bar {
-  position: absolute;
-  /* 設置為絕對定位 */
-  left: 20px;
-  /* 左邊距 */
-  top: 50%;
-  /* 垂直居中 */
-  transform: translateY(-40%);
-  /* 垂直居中 */
-  height: 500px;
-  /* 設定高度 */
-  width: 20px;
-  /* 設定寬度 */
-  background-color: #ddd;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  z-index: 1;
-  /* 確保在其他元素之上 */
-}
-
-.progress {
-  height: 100%;
-  /* 更新高度 */
-  width: 100%;
-  /* 寬度為100% */
-  background-color: #FFD700;
-  border-radius: 10px;
-  transition: height 0.5s ease;
-  /* 添加過渡效果 */
-}
-
-.fish-icon {
-  position: absolute;
-  /* 絕對定位 */
-  left: 50%;
-  /* 置中 */
-  transform: translateX(-50%);
-  /* 水平居中 */
-  height: 40px;
-  /* 魚的高度 */
-  width: 40px;
-  /* 魚的寬度 */
-  background-size: cover;
-  /* 確保圖片填滿 */
-  transition: bottom 0.5s ease;
-  /* 平滑過渡 */
-  bottom: calc(100% - 520px);
-}
-
-.fish-icon img {
-  width: 40px;
-  /* 設定寬度以保證正確顯示 */
-  height: auto;
-  /* 保持圖片的縱橫比 */
 }
 
 /* 最後結果的彈出框 */
@@ -254,4 +202,19 @@ header {
   font-weight: 700;
   cursor: pointer;
   margin-bottom: 30px;
+}
+
+/* 手機和平板響應式設計 */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .gifts {
+    flex-direction: column;
+  }
 }
