@@ -46,9 +46,10 @@ article {
 
 .container-background {
   background-image: url(../images/cover.png);
-  background-size: 90%;
-  background-position-x: center;
-  background-position-y: -100px;
+  background-size: 110%;
+  background-color: #fde4d0;
+  background-position-y: 80px;
+  background-repeat: no-repeat;
 }
 
 header {
@@ -358,7 +359,6 @@ header {
   font-weight: 600;
   line-height: normal;
   letter-spacing: 3px;
-  margin-top: 140px;
 }
 
 .start-button {
@@ -374,8 +374,6 @@ header {
   background-color: white;
   color: #D6E0DE;
   cursor: pointer;
-  margin-top: 30px;
-  margin-bottom: 21px;
 }
 
 .start-button:hover {
@@ -480,6 +478,8 @@ p {
 }
 
 .progress-bar {
+  /* 一開始先隱藏 */
+  display: none;   
   position: absolute;
   /* 設置為絕對定位 */
   left: 20px;
@@ -554,7 +554,7 @@ p {
   }
 
   .main-page .start-button {
-    margin-top: 300px;
+    margin-top: 170px;
   }
 
   .frontPageWord {
@@ -568,7 +568,7 @@ p {
 
   .container-background {
   background:     url(../images/cover.png) #fde4cf;
-    background-size: 100%;
+    background-size: 200%;
     background-position-y: center;
     background-repeat: no-repeat;
     /* background-color: linear-gradient(180deg, #FDFCFB 0%, #E2D1C3 100%); */
@@ -631,7 +631,9 @@ p {
 /* 更小的手機螢幕 */
 @media (max-width: 599px) {
   .main-page h1 {
-    font-size: 1.8em;
+    font-size: 6em;
+    margin-top: 30px;
+    align-content: center;
   }
 
   .main-page h4 {
@@ -639,14 +641,16 @@ p {
   }
 
   .start-button {
-    font-size: 1em;
+    font-size: 3em;
     padding: 8px 16px;
     width: 80%;
   }
 
   .frontPageWord {
     font-size: clamp(5px, 4vw, 16px) !important;
-    margin: 0 auto;
+    margin-left: 170px;
+    width: 190px;
+    margin-top: 40px;
   }
 
   .label {
@@ -658,4 +662,13 @@ p {
 
   }
 
+}
+
+/* 更小的手機螢幕 */
+@media (max-width: 400px) {
+  .frontPageWord {
+    margin-left: 170px;
+    width: 190px;
+    margin-top: 40px;
+  }
 }

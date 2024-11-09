@@ -4,6 +4,7 @@ function startQuiz() {
   container.style.background = "linear-gradient(180deg, #FDFCFB 0%, #E2D1C3 100%)"; // 設原本的背景
   document.getElementById("mainPage").style.display = "none"; // 隱藏首頁
   document.getElementById("question1").style.display = "flex"; // 顯示第一題
+  document.getElementById('progressBar').style.display = 'block'; // 顯示進度條
   updateProgress();
 }
 
